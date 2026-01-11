@@ -190,7 +190,7 @@ Visual and artistic style of assets.
 | `Style.PAINTERLY` | `"painterly"` | Painterly, hand-painted look |
 | `Style.LINE_ART` | `"line_art"` | Line art style |
 | `Style.CLAY` | `"clay"` | Clay or stop-motion style |
-| `Style.CELL_SHADING` | `"cell_shading"` | Cell-shaded, toon-shaded |
+| `Style.CEL_SHADING` | `"cel_shading"` | Cel-shaded, toon-shaded |
 | `Style.ABSTRACT` | `"abstract"` | Abstract style |
 | `Style.PIXELATED` | `"pixelated"` | Pixel art style |
 | `Style.OTHER` | `"other"` | Other or mixed styles |
