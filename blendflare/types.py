@@ -374,7 +374,7 @@ class Style(str, Enum):
     PAINTERLY = "painterly"
     LINE_ART = "line_art"
     CLAY = "clay"
-    CELL_SHADING = "cell_shading"
+    CEL_SHADING = "cel_shading"
     ABSTRACT = "abstract"
     PIXELATED = "pixelated"
     OTHER = "other"
