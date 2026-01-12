@@ -91,7 +91,7 @@ class BlendflareClient:
         self._session.headers.update({
             "Authorization": f"ApiKey {self.api_key}",
             "Content-Type": "application/json",
-            "User-Agent": "blendflare-python/1.0.0",
+            "User-Agent": "blendflare-python/1.0.2",
         })
         self._consecutive_403_count = 0
         self._last_request_time = 0

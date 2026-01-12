@@ -31,7 +31,7 @@ Example usage:
     >>> print(f"Download URL: {download.data.download_url}")
 """
 
-__version__ = "1.0.0"
+__version__ = "1.0.2"
 __author__ = "Blendflare"
 __email__ = "support@blendflare.com"
 

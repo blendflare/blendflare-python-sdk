@@ -90,18 +90,18 @@ pip install build twine
 python -m build
 
 # This creates:
-# - dist/blendflare-1.0.0-py3-none-any.whl
-# - dist/blendflare-1.0.0.tar.gz
+# - dist/blendflare-1.0.2-py3-none-any.whl
+# - dist/blendflare-1.0.2.tar.gz
 ```
 
 ### Install Built Package
 
 ```bash
 # Install the wheel
-pip install dist/blendflare-1.0.0-py3-none-any.whl
+pip install dist/blendflare-1.0.2-py3-none-any.whl
 
 # Or install the source distribution
-pip install dist/blendflare-1.0.0.tar.gz
+pip install dist/blendflare-1.0.2.tar.gz
 ```
 
 ### Publish to PyPI (Maintainers Only)
