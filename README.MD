@@ -1,6 +1,6 @@
 # Blendflare Python SDK
 
-[![PyPI version](https://badge.fury.io/py/blendflare.svg)](https://badge.fury.io/py/blendflare)
+[![PyPI version](https://badge.fury.io/py/blendflare.svg)](https://pypi.org/project/blendflare/)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -17,7 +17,7 @@ API keys are intended for personal use only. Do not expose your API key in publi
 - 🎯 **Type Safety** - Full type hints and enum support for all parameters
 - 🔧 **Blender Integration** - Perfect for building Blender add-ons
 
-## Installation [NOT IMPLEMENTED YET]
+## Installation
 
 ```bash
 pip install blendflare
