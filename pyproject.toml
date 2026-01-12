@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "blendflare"
-version = "1.0.1"
+version = "1.0.2"
 description = "Official Python SDK for Blendflare API - Search and download 3D assets for Blender"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -42,7 +42,7 @@ dev = [
 [project.urls]
 Homepage = "https://blendflare.com"
 Documentation = "https://docs.blendflare.com"
-Repository = "https://github.com/blendflare/blendflare-python"
+Repository = "https://github.com/blendflare/blendflare-python-sdk"
 Support = "https://blendflare.com/support"
 
 [tool.setuptools.packages.find]
