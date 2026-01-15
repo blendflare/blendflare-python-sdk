@@ -16,6 +16,7 @@ API keys are intended for personal use only. Do not expose your API key in publi
 - 📦 **Easy Downloads** - Generate download URLs for any asset
 - 🎯 **Type Safety** - Full type hints and enum support for all parameters
 - 🔧 **Blender Integration** - Perfect for building Blender add-ons
+- 🗂️ **Category Mapping** - Get subcategories for any category dynamically
 
 ## Installation
 
@@ -113,6 +114,37 @@ results = client.search_projects(
 results = client.search_projects(
     tags=["vehicle", "red", "sports"]
 )
+```
+
+### Working with Categories and Subcategories
+
+The SDK provides utilities to dynamically get subcategories for any category, perfect for building Blender addons with dynamic UI:
+
+```python
+from blendflare import Category, get_subcategories, get_subcategory_names
+
+# Get all subcategories for a category (returns Subcategory enums)
+architecture_subs = get_subcategories(Category.ARCHITECTURE)
+for sub in architecture_subs:
+    print(sub.value)  # 'building', 'door', 'window', etc.
+
+# Get subcategory names as strings (useful for UI)
+transport_names = get_subcategory_names(Category.TRANSPORT)
+print(transport_names)  # ['car', 'bicycle', 'motorcycle', ...]
+
+# Check if a category has subcategories
+nature_subs = get_subcategories(Category.NATURE)
+if nature_subs:
+    print(f"Nature has {len(nature_subs)} subcategories")
+
+# Use in search
+selected_category = Category.TRANSPORT
+available_subs = get_subcategories(selected_category)
+if available_subs:
+    results = client.search_projects(
+        category=selected_category,
+        subcategory=available_subs[0]  # First subcategory
+    )
 ```
 
 ### Advanced Filtering
@@ -299,6 +331,53 @@ Generate a download URL for a project.
 **Returns:** `DownloadResponse` object containing:
 - `message`: Response message
 - `data`: `DownloadData` object with URL and file info
+
+### Category Utilities
+
+#### `get_subcategories(category: Category) -> List[Subcategory]`
+
+Get all subcategories for a given category.
+
+**Parameters:**
+- `category`: The Category enum to get subcategories for
+
+**Returns:** List of Subcategory enums (empty list if no subcategories)
+
+**Example:**
+```python
+from blendflare import Category, get_subcategories
+
+subs = get_subcategories(Category.ARCHITECTURE)
+for sub in subs:
+    print(sub.value)
+```
+
+#### `get_subcategory_names(category: Category) -> List[str]`
+
+Get subcategory string values for a given category.
+
+**Parameters:**
+- `category`: The Category enum to get subcategory names for
+
+**Returns:** List of subcategory string values (empty list if no subcategories)
+
+**Example:**
+```python
+from blendflare import Category, get_subcategory_names
+
+names = get_subcategory_names(Category.HDRIS)
+# Returns: ['abstract', 'architectural', 'cityscapes', ...]
+```
+
+#### `CATEGORY_SUBCATEGORIES: Dict[Category, List[Subcategory]]`
+
+Dictionary mapping categories to their subcategories. Can be used directly for custom logic:
+
+```python
+from blendflare import CATEGORY_SUBCATEGORIES, Category
+
+transport_subs = CATEGORY_SUBCATEGORIES[Category.TRANSPORT]
+```
 
 ## Rate Limits
 

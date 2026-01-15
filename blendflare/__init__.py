@@ -31,7 +31,7 @@ Example usage:
     >>> print(f"Download URL: {download.data.download_url}")
 """
 
-__version__ = "1.0.2"
+__version__ = "1.0.3"
 __author__ = "Blendflare"
 __email__ = "support@blendflare.com"
 
@@ -57,6 +57,7 @@ from .models import (
 
 # Types and enums
 from .types import (
+    CATEGORY_SUBCATEGORIES,
     Category,
     Feature,
     GameEngine,
@@ -72,6 +73,8 @@ from .types import (
     Style,
     Subcategory,
     UVMapping,
+    get_subcategories,
+    get_subcategory_names,
     join_enum_values,
     parse_tags,
 )
@@ -113,6 +116,7 @@ __all__ = [
     "SearchResponse",
     "TechnicalSpecs",
     # Types
+    "CATEGORY_SUBCATEGORIES",
     "Category",
     "Feature",
     "GameEngine",
@@ -128,6 +132,8 @@ __all__ = [
     "Style",
     "Subcategory",
     "UVMapping",
+    "get_subcategories",
+    "get_subcategory_names",
     "join_enum_values",
     "parse_tags",
     # Exceptions
