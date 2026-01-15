@@ -1,12 +1,12 @@
 """Type definitions and enums for the Blendflare API."""
 
 from enum import Enum
-from typing import List, Optional
+from typing import Dict, List, Optional
 
 
 class Category(str, Enum):
     """Main asset categories."""
-    
+
     ARCHITECTURE = "architecture"
     CHARACTER = "character"
     ACCESSORIES = "accessories"
@@ -15,7 +15,7 @@ class Category(str, Enum):
     INTERIOR = "interior"
     MILITARY = "military"
     NATURE = "nature"
-    SCIENCE = "science"
+    # SCIENCE = "science"
     SPACE = "space"
     SPORT_HOBBY = "sport_hobby"
     TECHNOLOGY = "technology"
@@ -36,7 +36,7 @@ class Category(str, Enum):
 
 class Subcategory(str, Enum):
     """Subcategories for assets."""
-    
+
     # Accessories
     BAGS_CARRIERS = "bags_carriers"
     BELTS_STRAPS = "belts_straps"
@@ -50,7 +50,7 @@ class Subcategory(str, Enum):
     OTHER = "other"
     SCARVES_NECKWEAR = "scarves_neckwear"
     TECH_ACCESSORIES = "tech_accessories"
-    
+
     # Animation Rigs
     ANIMAL_RIGS = "animal_rigs"
     ANIMATION_PRESETS = "animation_presets"
@@ -65,7 +65,7 @@ class Subcategory(str, Enum):
     TAIL_RIGS = "tail_rigs"
     VEHICLE_RIGS = "vehicle_rigs"
     WING_RIGS = "wing_rigs"
-    
+
     # Architecture
     BALCONY_TERRACE = "balcony_terrace"
     BUILDING = "building"
@@ -80,7 +80,7 @@ class Subcategory(str, Enum):
     STRUCTURE = "structure"
     WALL_PANEL = "wall_panel"
     WINDOW = "window"
-    
+
     # Brushes
     ANIMAL_CREATURE = "animal_creature"
     ART = "art"
@@ -93,7 +93,7 @@ class Subcategory(str, Enum):
     INDUSTRIAL = "industrial"
     NATURE = "nature"
     SCI_FI_TECH = "sci_fi_tech"
-    
+
     # Character
     ANATOMY = "anatomy"
     ANIMAL = "animal"
@@ -104,7 +104,7 @@ class Subcategory(str, Enum):
     HUMANOIDS = "humanoids"
     MONSTER_CREATURE = "monster_creature"
     ROBOT = "robot"
-    
+
     # Decals
     BLOOD = "blood"
     BULLET_HOLES = "bullet_holes"
@@ -129,7 +129,7 @@ class Subcategory(str, Enum):
     VEHICLE_MARKINGS = "vehicle_markings"
     WATER_MOISTURE = "water_moisture"
     WEAR_TEAR = "wear_tear"
-    
+
     # Decoration
     BED_SHEET = "bed_sheet"
     BLANKET = "blanket"
@@ -153,7 +153,7 @@ class Subcategory(str, Enum):
     TOYS_GAMES = "toys_games"
     TROPHY_AWARD = "trophy_award"
     VASE = "vase"
-    
+
     # Educational
     BEGINNER_PROJECTS = "beginner_projects"
     CHALLENGE_PROJECTS = "challenge_projects"
@@ -165,7 +165,7 @@ class Subcategory(str, Enum):
     TECHNIQUE_DEMONSTRATIONS = "technique_demonstrations"
     TUTORIAL_FILES = "tutorial_files"
     WORKFLOW_EXAMPLES = "workflow_examples"
-    
+
     # HDRIs
     ABSTRACT = "abstract"
     ARCHITECTURAL = "architectural"
@@ -182,7 +182,7 @@ class Subcategory(str, Enum):
     STUDIO = "studio"
     URBAN = "urban"
     WATER_ENVIRONMENTS = "water_environments"
-    
+
     # Industrial
     CONTAINER = "container"
     EQUIPMENT = "equipment"
@@ -190,7 +190,33 @@ class Subcategory(str, Enum):
     PARTS = "parts"
     SIGN = "sign"
     TOOLS = "tools"
-    
+
+    # Interior
+    ARMCHAIR = "armchair"
+    BATHROOM_FURNITURE = "bathroom_furniture"
+    BED = "bed"
+    CABINETS = "cabinets"
+    CHAIR = "chair"
+    CONSOLE = "console"
+    DRESSING_TABLE = "dressing_table"
+    ENTERTAINMENT_CENTER = "entertainment_center"
+    HOME_ACCESSORIES = "home_accessories"
+    KIDS_FURNITURE = "kids_furniture"
+    KITCHEN_FURNITURE = "kitchen_furniture"
+    LIGHTS = "lights"
+    OFFICE_FURNITURE = "office_furniture"
+    OUTDOOR_FURNITURE = "outdoor_furniture"
+    POUF = "pouf"
+    RESTAURANT_BAR = "restaurant_bar"
+    ROOM_DIVIDER_SCREEN = "room_divider_screen"
+    SEATING_SET = "seating_set"
+    SHELVING_BOOKCASE = "shelving_bookcase"
+    SHOPPING_RETAIL = "shopping_retail"
+    SIDEBOARD_DRAWERS_CHEST = "sideboard_drawers_chest"
+    SOFA = "sofa"
+    TABLE = "table"
+    WARDROBE = "wardrobe"
+
     # Lighting
     CINEMATIC_LIGHTING = "cinematic_lighting"
     IES_PROFILES = "ies_profiles"
@@ -202,7 +228,7 @@ class Subcategory(str, Enum):
     PRODUCT_LIGHTING = "product_lighting"
     STUDIO_LIGHTING = "studio_lighting"
     VOLUMETRIC_LIGHTING = "volumetric_lighting"
-    
+
     # Materials
     ASPHALT = "asphalt"
     BRICKS = "bricks"
@@ -241,7 +267,7 @@ class Subcategory(str, Enum):
     TILES = "tiles"
     WAX = "wax"
     WOOD = "wood"
-    
+
     # Military
     AIRCRAFT = "aircraft"
     VEHICLES = "vehicles"
@@ -254,7 +280,7 @@ class Subcategory(str, Enum):
     PROPS = "props"
     ARMOR = "armor"
     CLOTHING_UNIFORMS = "clothing_uniforms"
-    
+
     # Nature
     ATMOSPHERE = "atmosphere"
     FLOWERS = "flowers"
@@ -265,7 +291,7 @@ class Subcategory(str, Enum):
     ROCK_STONE_FORMATION = "rock_stone_formation"
     TREE = "tree"
     WATER_FEATURES = "water_features"
-    
+
     # Node Groups
     COMPOSITING_NODES = "compositing_nodes"
     GEOMETRY_NODES = "geometry_nodes"
@@ -273,7 +299,7 @@ class Subcategory(str, Enum):
     SHADING_NODES = "shading_nodes"
     SIMULATION_NODES = "simulation_nodes"
     UTILITY_NODES = "utility_nodes"
-    
+
     # Research
     ASTRONOMY_ASTROPHYSICS = "astronomy_astrophysics"
     BIOLOGY_MOLECULAR = "biology_molecular"
@@ -285,7 +311,7 @@ class Subcategory(str, Enum):
     NEUROSCIENCE = "neuroscience"
     SCIENTIFIC_ILLUSTRATION = "scientific_illustration"
     SYNTHETIC_DATASETS = "synthetic_datasets"
-    
+
     # Scenes
     ABSTRACT_SCENES = "abstract_scenes"
     ANIMATION_SCENES = "animation_scenes"
@@ -297,7 +323,7 @@ class Subcategory(str, Enum):
     PRODUCT_SHOTS = "product_shots"
     REALISTIC_SCENES = "realistic_scenes"
     STYLIZED_SCENES = "stylized_scenes"
-    
+
     # Simulations & VFX
     ATMOSPHERIC_EFFECTS = "atmospheric_effects"
     CLOTH_SIMULATIONS = "cloth_simulations"
@@ -309,21 +335,21 @@ class Subcategory(str, Enum):
     PARTICLE_SYSTEMS = "particle_systems"
     PHYSICS_SIMULATIONS = "physics_simulations"
     WEATHER_EFFECTS = "weather_effects"
-    
+
     # Space
     PLANET = "planet"
     SATELLITE = "satellite"
     SPACECRAFT = "spacecraft"
     STATION = "station"
     SPACE_SUIT_EQUIPMENT = "space_suit_equipment"
-    
+
     # Sport & Hobby
     FISHING = "fishing"
     GYM = "gym"
     HOBBY_ACCESSORIES = "hobby_accessories"
     MUSIC = "music"
     SPORT = "sport"
-    
+
     # Technology
     AUDIO_DEVICES = "audio_devices"
     CABLES_CONNECTORS = "cables_connectors"
@@ -336,7 +362,7 @@ class Subcategory(str, Enum):
     ROBOTICS = "robotics"
     SMART_HOME_DEVICES = "smart_home_devices"
     VIDEO_DEVICES = "video_devices"
-    
+
     # Template Setups
     ARCHVIZ_TEMPLATES = "archviz_templates"
     CAMERA_RIGS = "camera_rigs"
@@ -348,7 +374,7 @@ class Subcategory(str, Enum):
     SHADER_TEMPLATES = "shader_templates"
     STUDIO_SETUPS = "studio_setups"
     WORKFLOW_TEMPLATES = "workflow_templates"
-    
+
     # Transport
     AGRICULTURAL_VEHICLE = "agricultural_vehicle"
     BICYCLE = "bicycle"
@@ -366,7 +392,7 @@ class Subcategory(str, Enum):
 
 class Style(str, Enum):
     """Visual style of assets."""
-    
+
     REALISTIC = "realistic"
     STYLIZED = "stylized"
     CARTOON = "cartoon"
@@ -382,7 +408,7 @@ class Style(str, Enum):
 
 class RenderEngine(str, Enum):
     """Blender render engines."""
-    
+
     CYCLES = "cycles"
     EEVEE = "eevee"
     WORKBENCH = "workbench"
@@ -395,7 +421,7 @@ class RenderEngine(str, Enum):
 
 class MaterialType(str, Enum):
     """Material types."""
-    
+
     PROCEDURAL = "procedural"
     TEXTURE_BASED = "texture_based"
     BOTH = "both"
@@ -404,7 +430,7 @@ class MaterialType(str, Enum):
 
 class UVMapping(str, Enum):
     """UV mapping types."""
-    
+
     NO_UV = "no_uv"
     OVERLAPPING = "overlapping"
     NON_OVERLAPPING = "non_overlapping"
@@ -413,7 +439,7 @@ class UVMapping(str, Enum):
 
 class Feature(str, Enum):
     """Asset features."""
-    
+
     PRINTABLE_3D = "3d_printable"
     ANIMATED = "animated"
     RIGGED = "rigged"
@@ -428,7 +454,7 @@ class Feature(str, Enum):
 
 class Simulation(str, Enum):
     """Physics simulation types."""
-    
+
     FLUID = "fluid"
     SMOKE = "smoke"
     CLOTH = "cloth"
@@ -439,7 +465,7 @@ class Simulation(str, Enum):
 
 class NodeGroupType(str, Enum):
     """Node group types."""
-    
+
     SHADING_NODES = "shading_nodes"
     GEOMETRY_NODES = "geometry_nodes"
     COMPOSITING_NODES = "compositing_nodes"
@@ -447,7 +473,7 @@ class NodeGroupType(str, Enum):
 
 class Physics(str, Enum):
     """Physics features."""
-    
+
     FORCE_FIELDS = "force_fields"
     RIGID_BODY_CONSTRAINTS = "rigid_body_constraints"
     COLLISION_OBJECTS = "collision_objects"
@@ -455,7 +481,7 @@ class Physics(str, Enum):
 
 class GameEngine(str, Enum):
     """Game engine compatibility."""
-    
+
     GODOT = "godot"
     UNITY = "unity"
     UNREAL_ENGINE = "unreal_engine"
@@ -463,7 +489,7 @@ class GameEngine(str, Enum):
 
 class LicenseType(str, Enum):
     """Asset license types."""
-    
+
     CC0 = "cc0"
     CC_BY = "cc_by"
     CC_BY_SA = "cc_by_sa"
@@ -475,7 +501,7 @@ class LicenseType(str, Enum):
 
 class LegalFlag(str, Enum):
     """Legal flags for assets."""
-    
+
     FAN_ART = "fan_art"
     CONTAINS_NSFW = "contains_nsfw"
     TRADEMARKS = "trademarks"
@@ -485,7 +511,7 @@ class LegalFlag(str, Enum):
 
 class SortBy(str, Enum):
     """Sort fields for search results."""
-    
+
     RELEVANCE = "relevance"
     NEWEST = "newest"
     OLDEST = "oldest"
@@ -498,9 +524,366 @@ class SortBy(str, Enum):
 
 class SortOrder(str, Enum):
     """Sort order for search results."""
-    
+
     ASC = "asc"
     DESC = "desc"
+
+
+# Category to Subcategory mapping
+CATEGORY_SUBCATEGORIES: Dict[Category, List[Subcategory]] = {
+    Category.ACCESSORIES: [
+        Subcategory.BAGS_CARRIERS,
+        Subcategory.BELTS_STRAPS,
+        Subcategory.EYEWEAR,
+        Subcategory.FASHION_ACCESSORIES,
+        Subcategory.FOOTWEAR,
+        Subcategory.GLOVES_HAND_ACCESSORIES,
+        Subcategory.HAIR_ACCESSORIES,
+        Subcategory.HEADWEAR,
+        Subcategory.JEWELRY,
+        Subcategory.OTHER,
+        Subcategory.SCARVES_NECKWEAR,
+        Subcategory.TECH_ACCESSORIES,
+    ],
+    Category.ANIMATION_RIGS: [
+        Subcategory.ANIMAL_RIGS,
+        Subcategory.ANIMATION_PRESETS,
+        Subcategory.CHARACTER_RIGS,
+        Subcategory.CONTROLLERS_UI,
+        Subcategory.CREATURE_RIGS,
+        Subcategory.FACIAL_RIGS,
+        Subcategory.HAND_RIGS,
+        Subcategory.IK_FK_SYSTEMS,
+        Subcategory.MECHANICAL_RIGS,
+        Subcategory.MOTION_CAPTURE,
+        Subcategory.TAIL_RIGS,
+        Subcategory.VEHICLE_RIGS,
+        Subcategory.WING_RIGS,
+    ],
+    Category.ARCHITECTURE: [
+        Subcategory.BALCONY_TERRACE,
+        Subcategory.BUILDING,
+        Subcategory.DOOR,
+        Subcategory.EXTERIOR_ELEMENT,
+        Subcategory.FENCE_RAILING,
+        Subcategory.FLOOR_COVERING,
+        Subcategory.FOUNDATION_STRUCTURAL_BASE,
+        Subcategory.MOLDING_CARVING,
+        Subcategory.ROOF_ROOFING_ELEMENTS,
+        Subcategory.STAIRS,
+        Subcategory.STRUCTURE,
+        Subcategory.WALL_PANEL,
+        Subcategory.WINDOW,
+    ],
+    Category.BRUSHES: [
+        Subcategory.ANIMAL_CREATURE,
+        Subcategory.ART,
+        Subcategory.CLOTHING,
+        Subcategory.DAMAGE,
+        Subcategory.FABRIC_TEXTILE,
+        Subcategory.GEOMETRIC,
+        Subcategory.HAIR_FUR,
+        Subcategory.HUMAN,
+        Subcategory.INDUSTRIAL,
+        Subcategory.NATURE,
+        Subcategory.SCI_FI_TECH,
+    ],
+    Category.CHARACTER: [
+        Subcategory.ANATOMY,
+        Subcategory.ANIMAL,
+        Subcategory.WOMAN_CLOTHING,
+        Subcategory.MAN_CLOTHING,
+        Subcategory.FANTASY_RACES,
+        Subcategory.HAIR_HAIRSTYLES,
+        Subcategory.HUMANOIDS,
+        Subcategory.MONSTER_CREATURE,
+        Subcategory.ROBOT,
+    ],
+    Category.DECALS: [
+        Subcategory.BLOOD,
+        Subcategory.BULLET_HOLES,
+        Subcategory.BURN_MARKS,
+        Subcategory.CRACKS_DAMAGE,
+        Subcategory.DEBRIS,
+        Subcategory.DECORATION,
+        Subcategory.DIRT_GRIME,
+        Subcategory.FLOOR_MARKINGS,
+        Subcategory.FOLIAGE,
+        Subcategory.FOODS,
+        Subcategory.GRAFFITI,
+        Subcategory.IMPERFECTIONS,
+        Subcategory.ORGANIC_PATTERNS,
+        Subcategory.PAINT_CHIPPING,
+        Subcategory.RUST_CORROSION,
+        Subcategory.SCRATCHES_SCUFFS,
+        Subcategory.SIGNAGE,
+        Subcategory.STAINS_SPILLS,
+        Subcategory.SYMBOLS_ICONS,
+        Subcategory.TEXT_NUMBERS,
+        Subcategory.VEHICLE_MARKINGS,
+        Subcategory.WATER_MOISTURE,
+        Subcategory.WEAR_TEAR,
+    ],
+    Category.DECORATION: [
+        Subcategory.BED_SHEET,
+        Subcategory.BLANKET,
+        Subcategory.BOOK,
+        Subcategory.CANDLES_CANDLE_HOLDERS,
+        Subcategory.CARPETS,
+        Subcategory.CLOCK_WATCH,
+        Subcategory.CURTAIN,
+        Subcategory.DECORATION_SET,
+        Subcategory.FABRICS,
+        Subcategory.FIREPLACE,
+        Subcategory.FOOD_DRINKS,
+        Subcategory.HOLIDAY_DECORATION,
+        Subcategory.MIRROR,
+        Subcategory.MONEY,
+        Subcategory.MUSICAL_INSTRUMENTS,
+        Subcategory.PICTURE,
+        Subcategory.PILLOW,
+        Subcategory.SCULPTURE,
+        Subcategory.TEXTILE,
+        Subcategory.TOYS_GAMES,
+        Subcategory.TROPHY_AWARD,
+        Subcategory.VASE,
+    ],
+    Category.EDUCATIONAL: [
+        Subcategory.BEGINNER_PROJECTS,
+        Subcategory.CHALLENGE_PROJECTS,
+        Subcategory.COURSE_MATERIALS,
+        Subcategory.DOCUMENTATION,
+        Subcategory.LEARNING_KITS,
+        Subcategory.PRACTICE_SCENES,
+        Subcategory.STUDY_REFERENCES,
+        Subcategory.TECHNIQUE_DEMONSTRATIONS,
+        Subcategory.TUTORIAL_FILES,
+        Subcategory.WORKFLOW_EXAMPLES,
+    ],
+    Category.HDRIS: [
+        Subcategory.ABSTRACT,
+        Subcategory.ARCHITECTURAL,
+        Subcategory.CITYSCAPES,
+        Subcategory.FUTURISTIC_ENVIRONMENTS,
+        Subcategory.HOLIDAY,
+        Subcategory.INTERIORS,
+        Subcategory.LANDSCAPES,
+        Subcategory.NIGHTTIME_ENVIRONMENTS,
+        Subcategory.PUBLIC,
+        Subcategory.RESIDENTIAL,
+        Subcategory.RURAL,
+        Subcategory.SPORTS,
+        Subcategory.STUDIO,
+        Subcategory.URBAN,
+        Subcategory.WATER_ENVIRONMENTS,
+    ],
+    Category.INDUSTRIAL: [
+        Subcategory.CONTAINER,
+        Subcategory.EQUIPMENT,
+        Subcategory.MACHINERY,
+        Subcategory.PARTS,
+        Subcategory.SIGN,
+        Subcategory.TOOLS,
+    ],
+    Category.INTERIOR: [
+        Subcategory.ARMCHAIR,
+        Subcategory.BATHROOM_FURNITURE,
+        Subcategory.BED,
+        Subcategory.CABINETS,
+        Subcategory.CHAIR,
+        Subcategory.CONSOLE,
+        Subcategory.DRESSING_TABLE,
+        Subcategory.ENTERTAINMENT_CENTER,
+        Subcategory.HOME_ACCESSORIES,
+        Subcategory.KIDS_FURNITURE,
+        Subcategory.KITCHEN_FURNITURE,
+        Subcategory.LIGHTS,
+        Subcategory.OFFICE_FURNITURE,
+        Subcategory.OUTDOOR_FURNITURE,
+        Subcategory.POUF,
+        Subcategory.RESTAURANT_BAR,
+        Subcategory.ROOM_DIVIDER_SCREEN,
+        Subcategory.SEATING_SET,
+        Subcategory.SHELVING_BOOKCASE,
+        Subcategory.SHOPPING_RETAIL,
+        Subcategory.SIDEBOARD_DRAWERS_CHEST,
+        Subcategory.SOFA,
+        Subcategory.TABLE,
+        Subcategory.WARDROBE,
+    ],
+    Category.LIGHTING: [
+        Subcategory.CINEMATIC_LIGHTING,
+        Subcategory.IES_PROFILES,
+        Subcategory.LIGHT_RIGS,
+        Subcategory.NATURAL_LIGHTING,
+        Subcategory.NEON_GLOWING,
+        Subcategory.NIGHT_LIGHTING,
+        Subcategory.OUTDOOR_LIGHTING,
+        Subcategory.PRODUCT_LIGHTING,
+        Subcategory.STUDIO_LIGHTING,
+        Subcategory.VOLUMETRIC_LIGHTING,
+    ],
+    Category.MATERIALS: [
+        Subcategory.ASPHALT,
+        Subcategory.BRICKS,
+        Subcategory.CARBON_FIBER,
+        Subcategory.CERAMIC,
+        Subcategory.CONCRETE,
+        Subcategory.DIRT,
+        Subcategory.FABRIC,
+        Subcategory.FLOOR,
+        Subcategory.FOAM,
+        Subcategory.FOOD,
+        Subcategory.GLASS,
+        Subcategory.GRASS,
+        Subcategory.GROUND,
+        Subcategory.ICE,
+        Subcategory.LEATHER,
+        Subcategory.LIQUID,
+        Subcategory.MARBLE,
+        Subcategory.METAL,
+        Subcategory.ORGANIC,
+        Subcategory.ORNAMENTS,
+        Subcategory.PAINT,
+        Subcategory.PAPER,
+        Subcategory.PAVING,
+        Subcategory.PLASTER,
+        Subcategory.PLASTIC,
+        Subcategory.ROCK,
+        Subcategory.ROOFING,
+        Subcategory.RUBBER,
+        Subcategory.RUST,
+        Subcategory.SAND,
+        Subcategory.SOIL,
+        Subcategory.STONE,
+        Subcategory.TECH,
+        Subcategory.TERRAZZO,
+        Subcategory.TILES,
+        Subcategory.WAX,
+        Subcategory.WOOD,
+    ],
+    Category.MILITARY: [
+        Subcategory.AIRCRAFT,
+        Subcategory.VEHICLES,
+        Subcategory.WATERCRAFT,
+        Subcategory.WEAPONS,
+        Subcategory.EQUIPMENT_GEAR,
+        Subcategory.ACCESSORIES_MILITARY,
+        Subcategory.FORTIFICATIONS,
+        Subcategory.CAMPS_BASES,
+        Subcategory.PROPS,
+        Subcategory.ARMOR,
+        Subcategory.CLOTHING_UNIFORMS,
+    ],
+    Category.NATURE: [
+        Subcategory.ATMOSPHERE,
+        Subcategory.FLOWERS,
+        Subcategory.FOLIAGE_BUSH,
+        Subcategory.FUNGI_MUSHROOMS,
+        Subcategory.LANDSCAPE,
+        Subcategory.PLANT,
+        Subcategory.ROCK_STONE_FORMATION,
+        Subcategory.TREE,
+        Subcategory.WATER_FEATURES,
+    ],
+    Category.NODE_GROUP: [
+        Subcategory.COMPOSITING_NODES,
+        Subcategory.GEOMETRY_NODES,
+        Subcategory.PROCEDURAL_GENERATORS,
+        Subcategory.SHADING_NODES,
+        Subcategory.SIMULATION_NODES,
+        Subcategory.UTILITY_NODES,
+    ],
+    Category.RESEARCH: [
+        Subcategory.ASTRONOMY_ASTROPHYSICS,
+        Subcategory.BIOLOGY_MOLECULAR,
+        Subcategory.BIOMEDICAL_MEDICAL,
+        Subcategory.CHEMISTRY_MATERIALS,
+        Subcategory.DATA_VISUALIZATION,
+        Subcategory.EARTH_SCIENCES_GEOLOGY,
+        Subcategory.MACHINE_LEARNING_AI,
+        Subcategory.NEUROSCIENCE,
+        Subcategory.SCIENTIFIC_ILLUSTRATION,
+        Subcategory.SYNTHETIC_DATASETS,
+    ],
+    Category.SCENES: [
+        Subcategory.ABSTRACT_SCENES,
+        Subcategory.ANIMATION_SCENES,
+        Subcategory.COMPLETE_PROJECTS,
+        Subcategory.ENVIRONMENT_SCENES,
+        Subcategory.EXTERIOR_SCENES,
+        Subcategory.GAME_ENVIRONMENTS,
+        Subcategory.INTERIOR_SCENES,
+        Subcategory.PRODUCT_SHOTS,
+        Subcategory.REALISTIC_SCENES,
+        Subcategory.STYLIZED_SCENES,
+    ],
+    Category.SIMULATIONS_VFX: [
+        Subcategory.ATMOSPHERIC_EFFECTS,
+        Subcategory.CLOTH_SIMULATIONS,
+        Subcategory.DESTRUCTION_BREAKING,
+        Subcategory.EXPLOSIONS,
+        Subcategory.FIRE_SMOKE,
+        Subcategory.FLUID_SIMULATIONS,
+        Subcategory.MAGIC_ENERGY_EFFECTS,
+        Subcategory.PARTICLE_SYSTEMS,
+        Subcategory.PHYSICS_SIMULATIONS,
+        Subcategory.WEATHER_EFFECTS,
+    ],
+    Category.SPACE: [
+        Subcategory.PLANET,
+        Subcategory.SATELLITE,
+        Subcategory.SPACECRAFT,
+        Subcategory.STATION,
+        Subcategory.SPACE_SUIT_EQUIPMENT,
+    ],
+    Category.SPORT_HOBBY: [
+        Subcategory.FISHING,
+        Subcategory.GYM,
+        Subcategory.HOBBY_ACCESSORIES,
+        Subcategory.MUSIC,
+        Subcategory.SPORT,
+    ],
+    Category.TECHNOLOGY: [
+        Subcategory.AUDIO_DEVICES,
+        Subcategory.CABLES_CONNECTORS,
+        Subcategory.COMPUTER,
+        Subcategory.DEVICE,
+        Subcategory.DRONE,
+        Subcategory.GAMING_HARDWARE,
+        Subcategory.HOME_APPLIANCE,
+        Subcategory.PHOTOGRAPHY,
+        Subcategory.ROBOTICS,
+        Subcategory.SMART_HOME_DEVICES,
+        Subcategory.VIDEO_DEVICES,
+    ],
+    Category.TEMPLATE_SETUPS: [
+        Subcategory.ARCHVIZ_TEMPLATES,
+        Subcategory.CAMERA_RIGS,
+        Subcategory.COMPOSITING_TEMPLATES,
+        Subcategory.LIGHTING_SETUPS,
+        Subcategory.PRODUCT_VISUALIZATION,
+        Subcategory.RENDER_SETUPS,
+        Subcategory.SCENE_TEMPLATES,
+        Subcategory.SHADER_TEMPLATES,
+        Subcategory.STUDIO_SETUPS,
+        Subcategory.WORKFLOW_TEMPLATES,
+    ],
+    Category.TRANSPORT: [
+        Subcategory.AGRICULTURAL_VEHICLE,
+        Subcategory.BICYCLE,
+        Subcategory.CAR,
+        Subcategory.CONSTRUCTION_VEHICLE,
+        Subcategory.EMERGENCY,
+        Subcategory.HEAVY_VEHICLE,
+        Subcategory.MOTOCYCLE,
+        Subcategory.PUBLIC_TRANSPORT,
+        Subcategory.RAILED_VEHICLE,
+        Subcategory.SMALL_ELECTRIC_VEHICLES,
+        Subcategory.TRAILER_CARAVAN,
+        Subcategory.VEHICLE_PARTS,
+    ],
+}
 
 
 # Helper functions for type conversions
@@ -512,3 +895,57 @@ def join_enum_values(values: List[Enum]) -> str:
 def parse_tags(tags: List[str]) -> str:
     """Parse list of tags into API format."""
     return "+".join(tags)
+
+
+def get_subcategories(category: Category) -> List[Subcategory]:
+    """Get all subcategories for a given category.
+
+    Args:
+        category: The category to get subcategories for
+
+    Returns:
+        List of Subcategory enums for the given category.
+        Returns empty list if category has no subcategories.
+
+    Example:
+        >>> from blendflare import Category, get_subcategories
+        >>>
+        >>> # Get all architecture subcategories
+        >>> arch_subs = get_subcategories(Category.ARCHITECTURE)
+        >>> for sub in arch_subs:
+        ...     print(sub.value)
+        balcony_terrace
+        building
+        door
+        ...
+
+        >>> # Use in UI to populate dropdown
+        >>> category = Category.TRANSPORT
+        >>> available_subcategories = get_subcategories(category)
+        >>> # Now you can create a dynamic dropdown in your Blender addon
+    """
+    return CATEGORY_SUBCATEGORIES.get(category, [])
+
+
+def get_subcategory_names(category: Category) -> List[str]:
+    """Get all subcategory names (string values) for a given category.
+
+    Args:
+        category: The category to get subcategory names for
+
+    Returns:
+        List of subcategory string values for the given category.
+        Returns empty list if category has no subcategories.
+
+    Example:
+        >>> from blendflare import Category, get_subcategory_names
+        >>>
+        >>> # Get subcategory names for HDRIS
+        >>> hdri_subs = get_subcategory_names(Category.HDRIS)
+        >>> print(hdri_subs)
+        ['abstract', 'architectural', 'cityscapes', ...]
+
+        >>> # Useful for creating EnumProperty items in Blender
+        >>> items = [(s, s.replace('_', ' ').title(), '') for s in get_subcategory_names(Category.TRANSPORT)]
+    """
+    return [sub.value for sub in get_subcategories(category)]
